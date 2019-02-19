@@ -1,7 +1,6 @@
 #!/usr/bin/env python3.7.2
 # encoding: utf-8
 #Author - Yicun Hou
-import wget
 import os
 import queue
 import threading
