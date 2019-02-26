@@ -25,7 +25,8 @@ def test_video1():
 
     meta_480 = ffprobe_sync(fnout)
     duration_480 = float(meta_480['streams'][0]['duration'])
-
+    
+    time.sleep(20)
     assert orig_duration == approx(duration_480)
 
 def test_video2():
@@ -39,6 +40,7 @@ def test_video2():
 
     meta_720 = ffprobe_sync(fnout)
     duration_720 = float(meta_720['streams'][0]['duration'])
+    time.sleep(20)
     assert orig_duration == approx(duration_720)
 
 def ffprobe_sync(filein: Path) -> dict:
