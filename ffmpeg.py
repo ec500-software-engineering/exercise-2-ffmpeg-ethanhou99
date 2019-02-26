@@ -19,10 +19,9 @@ def read_file(filepath):
     return video_list
 
 
-
-def vedio_conv(video_name, progressive, Mbps, fps, name):
+def video_conv(video_name, progressive, Mbps, name):
     video = video_name
-    subprocess.check_call(['ffmpeg', '-i' , video, '-b:v' , Mbps+'M', '-s', 'hd'+progressive, video[0:-4]+name])
+    subprocess.check_call(['ffmpeg', '-i' , video, '-b:v' , Mbps+'M', '-s', 'hd'+progressive, name])
     #return video
 
 
@@ -38,13 +37,13 @@ def main():
     # Modify the convertion method
     while q.qsize() != 0:
         video = q.get()
-        threads.append(threading.Thread(target=vedio_conv, kwargs={'video_name':video,'progressive':'720', 'Mbps':'2', 'fps':'30', 'name':'720.avi'}))
-        threads.append(threading.Thread(target=vedio_conv, kwargs={'video_name':video,'progressive':'480', 'Mbps':'1', 'fps':'30', 'name':'480.mp4'}))
+        threads.append(threading.Thread(target=video_conv, kwargs={'video_name':video,'progressive':'720', 'Mbps':'2', 'name':'BU720.mp4'}))
+        threads.append(threading.Thread(target=video_conv, kwargs={'video_name':video,'progressive':'480', 'Mbps':'1', 'name':'BU480.mp4'}))
 
     # Start convertion threads
     for thread in threads:
         thread.start()
-    #print(str(COUNTER) + ' videos are in processing.')
+
 
 
 if __name__ == '__main__':
