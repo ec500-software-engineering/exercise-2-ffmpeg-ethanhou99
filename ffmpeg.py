@@ -14,7 +14,7 @@ def read_file(filepath):
     file_list = os.listdir(filepath)
     video_list = []
     for file in file_list:
-        if file.endswith('.mp4'):
+        if file.endswith('.avi'):
             video_list.append(file)
     return video_list
 
