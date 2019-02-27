@@ -6,8 +6,9 @@ import json
 import os
 from pathlib import Path
 import time
+from ffmpeg import if_true
 
-def atest_input_file():
+def test_input_file():
     outlist = ['BU.avi']
     path = os.getcwd()
     fout = read_file(path)
@@ -26,7 +27,9 @@ def test_video1():
     meta_480 = ffprobe_sync(fnout)
     duration_480 = float(meta_480['streams'][0]['duration'])
     
-    time.sleep(20)
+    while(if_true == False):
+        pass
+
     assert orig_duration == approx(duration_480, rel=0.01)
 
 def test_video2():
@@ -40,7 +43,9 @@ def test_video2():
 
     meta_720 = ffprobe_sync(fnout)
     duration_720 = float(meta_720['streams'][0]['duration'])
-    time.sleep(20)
+
+    while(if_true == False):
+        pass
     assert orig_duration == approx(duration_720, rel=0.01)
 
 def ffprobe_sync(filein: Path) -> dict:

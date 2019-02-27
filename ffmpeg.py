@@ -7,6 +7,8 @@ import threading
 import pytest
 import subprocess
 
+v1 = False
+v2 = False
 
 def read_file(filepath):
     '''List all the mp4 files'''
@@ -20,12 +22,21 @@ def read_file(filepath):
 
 
 def video_conv(video_name, progressive, Mbps, name):
+    global v1, v2
     video = video_name
     subprocess.check_call(['ffmpeg', '-strict', '-2', '-i' , video, '-b:v' , Mbps+'M', '-s', 'hd'+progressive, name])
-    return True
+    v1 = True
+    v2 = True
 
+def if_true():
+    global v1, v2
+    if v1 == True and v2 == True:
+        return True
+    else:
+        return False
 
 def main():
+    global v1, v2
     path = os.getcwd()
     all_video = read_file(path)
     q = queue.Queue()
@@ -43,6 +54,13 @@ def main():
     # Start convertion threads
     for thread in threads:
         thread.start()
+
+    v1 = True
+    v2 = True
+    if_true()
+
+    
+    
 
 
 
