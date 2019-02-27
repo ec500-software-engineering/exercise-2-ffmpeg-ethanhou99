@@ -21,8 +21,8 @@ def read_file(filepath):
 
 def video_conv(video_name, progressive, Mbps, name):
     video = video_name
-    subprocess.check_call(['ffmpeg', '-i' , video, '-b:v' , Mbps+'M', '-s', 'hd'+progressive, name])
-    #return video
+    subprocess.check_call(['ffmpeg', '-strict', '-2', '-i' , video, '-b:v' , Mbps+'M', '-s', 'hd'+progressive, name])
+    return True
 
 
 def main():
