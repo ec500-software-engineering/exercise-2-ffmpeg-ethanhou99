@@ -16,7 +16,7 @@ def test_input_file():
 
 def test_video1():
     fnin = 'BU.avi'
-    fnout = 'BU480.mp4'
+    fnout = 'BU480.avi'
 
     orig_meta = ffprobe_sync(fnin)
     orig_duration = float(orig_meta['streams'][0]['duration'])
@@ -30,7 +30,7 @@ def test_video1():
 
 def test_video2():
     fnin = 'BU.avi'
-    fnout = 'BU720.mp4'
+    fnout = 'BU720.avi'
 
     orig_meta = ffprobe_sync(fnin)
     orig_duration = float(orig_meta['streams'][0]['duration'])
