@@ -6,6 +6,7 @@ import queue
 import threading
 import pytest
 import subprocess
+import time
 
 v1 = False
 v2 = False
@@ -25,8 +26,7 @@ def video_conv(video_name, progressive, Mbps, name):
     global v1, v2
     video = video_name
     subprocess.check_call(['ffmpeg', '-strict', '-2', '-i' , video, '-b:v' , Mbps+'M', '-s', 'hd'+progressive, name])
-    v1 = True
-    v2 = True
+    time.sleep(30)
 
 def if_true():
     global v1, v2
@@ -58,10 +58,6 @@ def main():
     v1 = True
     v2 = True
     if_true()
-
-    
-    
-
 
 
 if __name__ == '__main__':
