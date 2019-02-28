@@ -5,7 +5,6 @@ import subprocess
 import json
 import os
 from pathlib import Path
-from ffmpeg import if_true
 
 def test_input_file():
     outlist = ['BU.avi']

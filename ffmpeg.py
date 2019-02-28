@@ -3,13 +3,10 @@
 #Author - Yicun Hou
 import os
 import queue
-import threading
-import pytest
 import subprocess
+import threading
 import time
 
-v1 = False
-v2 = False
 
 def read_file(filepath):
     '''List all the mp4 files'''
@@ -21,22 +18,14 @@ def read_file(filepath):
             video_list.append(file)
     return video_list
 
-
 def video_conv(video_name, progressive, Mbps, name):
-    global v1, v2
+    ''' Video convention function '''
     video = video_name
     subprocess.check_call(['ffmpeg', '-strict', '-2', '-i' , video, '-b:v' , Mbps+'M', '-s', 'hd'+progressive, name])
     time.sleep(30)
 
-def if_true():
-    global v1, v2
-    if v1 == True and v2 == True:
-        return True
-    else:
-        return False
-
 def main():
-    global v1, v2
+    ''' Main function of the file '''
     path = os.getcwd()
     all_video = read_file(path)
     q = queue.Queue()
@@ -54,10 +43,6 @@ def main():
     # Start convertion threads
     for thread in threads:
         thread.start()
-
-    v1 = True
-    v2 = True
-    if_true()
 
 
 if __name__ == '__main__':
