@@ -50,3 +50,9 @@ def ffprobe_sync(filein: Path) -> dict:
                                     str(filein)], 
                                     text=True)
     return json.loads(meta)
+
+
+if __name__ == "__main__":
+    test_input_file()
+    test_video1()
+    test_video2()

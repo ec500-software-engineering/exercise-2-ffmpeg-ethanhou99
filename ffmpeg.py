@@ -9,8 +9,7 @@ import time
 
 
 def read_file(filepath):
-    '''List all the mp4 files'''
-
+    '''List all the avi video files'''
     file_list = os.listdir(filepath)
     video_list = []
     for file in file_list:
@@ -42,6 +41,13 @@ def main():
 
     # Start convertion threads
     for thread in threads:
+        thread.setDaemon(True)
+        while(True):
+        # Limit the thread number to maximun 2 threads
+            if(len(threading.enumerate())>1):
+                pass
+            else:
+                break
         thread.start()
 
 
