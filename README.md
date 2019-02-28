@@ -1,6 +1,6 @@
 # EC500-ffmpeg exercise
 
-## Instructions
+## Description
 This script can help users convert the video to various format. For example, the ffmepg.py can convert an .avi video to 480P and 720P. For your convenience, there is a [BU introduction](https://www.youtube.com/watch?v=ufOtu6As9-M&t=89s) video that can be used for the testing. Have fun!
 
 ## Prerequisite
