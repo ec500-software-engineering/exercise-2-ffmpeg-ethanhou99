@@ -17,6 +17,11 @@ Once you have Homebrew installed install ffmpeg from the Terminal with the follo
 $ brew install ffmpeg
 ```
 
+### Install the project
+```
+https://github.com/ec500-software-engineering/exercise-2-ffmpeg-ethanhou99.git
+```
+
 ## Function
 - The read_file() in the ffmepg.py is to read videos from folders.
 - The video_conv() in the ffmepg.py is the main convert function.
