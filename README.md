@@ -19,7 +19,7 @@ $ brew install ffmpeg
 
 ### Install the project
 ```
-https://github.com/ec500-software-engineering/exercise-2-ffmpeg-ethanhou99.git
+git clone https://github.com/ec500-software-engineering/exercise-2-ffmpeg-ethanhou99.git
 ```
 
 ## Function
