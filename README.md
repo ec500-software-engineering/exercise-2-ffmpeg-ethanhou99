@@ -23,4 +23,4 @@ $ brew install ffmpeg
 - The test_ffmpeg.py is designed for the testing.
 
 ## Flow chart
-
+![image](https://github.com/ec500-software-engineering/exercise-2-ffmpeg-ethanhou99/blob/master/flowchart.png)
